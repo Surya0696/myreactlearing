@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
 
-const Depts = () => {
+const Depts = ({ DeptsLsist }) => {
   return (
-    <div>Depts</div>
-  )
-}
+    <>
+      {DeptsLsist.map((items, index) => {
+        return <li key={index}>{items}</li>;
+      })}
+    </>
+  );
+};
 
 export default Depts;
