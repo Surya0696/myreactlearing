@@ -19,7 +19,7 @@ const Company = (props) => {
             Search
           </button>
           <h3>Departments</h3>
-          <Depts DeptsLsist={DeptsLsist} on />
+          <Depts DeptsLsist={DeptsLsist} />
         </div>
       </div>
     </>
