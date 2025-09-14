@@ -1,19 +1,28 @@
+import { useState } from "react";
 import Company from "./Components/Companys/Company";
+import { CompanyLsit } from "./DataSet";
 
 function App() {
-  const DeptsLsist = ["HR", "Sale", "IT", "Tech"];
+  const [SelectCompanyName, SetselectCompanyName] = useState("Enter the Name");
+
+  const handleSelected = (CompanyName) => {
+    SetselectCompanyName(CompanyName);
+  };
+
   return (
     <div className="App">
-      <Company
-        CompanyName="Google Tech"
-        details="You can Search for anything"
-        DeptsLsist={DeptsLsist}
-      />
-      <Company
-        CompanyName="ABC Tech"
-        details="You can Search for anything"
-        DeptsLsist={DeptsLsist}
-      />
+      <h2>{SelectCompanyName}</h2>
+      {CompanyLsit.map((companyIteam, i) => {
+        return (
+          <Company
+            key={companyIteam.id}
+            CompanyName={companyIteam.CompanyName}
+            details={companyIteam.details}
+            DeptsLsist={companyIteam.DeptsLsist}
+            onSelectedBtn={handleSelected}
+          />
+        );
+      })}
     </div>
   );
 }

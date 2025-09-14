@@ -2,10 +2,8 @@ import React from "react";
 import Depts from "../Depts/Depts";
 
 const Company = (props) => {
-  const { CompanyName, details, DeptsLsist } = props;
-  const btnHandle = () => {
-    console.log("clicked it " + CompanyName);
-  };
+  const { CompanyName, details, DeptsLsist, onSelectedBtn } = props;
+
   return (
     <>
       <div style={{ backgroundColor: "gray", width: " 50%" }}>
@@ -13,8 +11,15 @@ const Company = (props) => {
           <h2>Company Name: {CompanyName}</h2>
           <p>{details}</p>
 
-          <button onClick={btnHandle}>Search</button>
-          <Depts DeptsLsist={DeptsLsist} />
+          <button
+            onClick={() => {
+              onSelectedBtn(CompanyName);
+            }}
+          >
+            Search
+          </button>
+          <h3>Departments</h3>
+          <Depts DeptsLsist={DeptsLsist} on />
         </div>
       </div>
     </>

@@ -4,7 +4,7 @@ const Depts = ({ DeptsLsist }) => {
   return (
     <>
       {DeptsLsist.map((items, index) => {
-        return <li key={index}>{items}</li>;
+        return <button key={index}>{items}</button>;
       })}
     </>
   );
