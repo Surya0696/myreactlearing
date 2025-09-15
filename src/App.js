@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Company from "./Components/Companys/Company";
 import { CompanyLsit } from "./DataSet";
+import Carts from "./Components/Cart/Carts";
 
 function App() {
   const [SelectCompanyName, SetselectCompanyName] = useState(
@@ -25,6 +26,7 @@ function App() {
           />
         );
       })}
+       <Carts />
     </div>
   );
 }

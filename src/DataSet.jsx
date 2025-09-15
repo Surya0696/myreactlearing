@@ -12,3 +12,26 @@ export const CompanyLsit = [
     DeptsLsist: ["IT", "HR", "Sale"],
   },
 ];
+
+export const data = [
+  {
+    id: 1,
+    name: "Phone 1",
+    price: "100",
+  },
+  {
+    id: 2,
+    name: "Phone 2",
+    price: "200",
+  },
+  {
+    id: 3,
+    name: "Phone 3",
+    price: "300",
+  },
+  {
+    id: 4,
+    name: "Phone 4",
+    price: "500",
+  },
+];
