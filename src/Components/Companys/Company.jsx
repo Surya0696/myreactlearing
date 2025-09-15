@@ -4,6 +4,10 @@ import Depts from "../Depts/Depts";
 const Company = (props) => {
   const { CompanyName, details, DeptsLsist, onSelectedBtn } = props;
 
+  const HandleSelectedDepts = (DeptsLsist) => {
+    onSelectedBtn(`${CompanyName} - ${DeptsLsist}`);
+  }
+
   return (
     <>
       <div style={{ backgroundColor: "gray", width: " 50%" }}>
@@ -19,7 +23,11 @@ const Company = (props) => {
             Search
           </button>
           <h3>Departments</h3>
-          <Depts DeptsLsist={DeptsLsist} />
+          <Depts
+            DeptsLsist={DeptsLsist}
+            HandleSelectedDepts={HandleSelectedDepts}
+             
+          />
         </div>
       </div>
     </>

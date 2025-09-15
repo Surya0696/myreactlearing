@@ -3,7 +3,9 @@ import Company from "./Components/Companys/Company";
 import { CompanyLsit } from "./DataSet";
 
 function App() {
-  const [SelectCompanyName, SetselectCompanyName] = useState("Enter the Name");
+  const [SelectCompanyName, SetselectCompanyName] = useState(
+    "Select Company Name"
+  );
 
   const handleSelected = (CompanyName) => {
     SetselectCompanyName(CompanyName);

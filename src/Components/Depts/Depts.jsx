@@ -1,10 +1,19 @@
 import React from "react";
 
-const Depts = ({ DeptsLsist }) => {
+const Depts = ({ DeptsLsist, HandleSelectedDepts }) => {
   return (
     <>
       {DeptsLsist.map((items, index) => {
-        return <button key={index}>{items}</button>;
+        <li key={index}>{items}</li>;
+        return (
+          <button
+            onClick={() => {
+              HandleSelectedDepts(items);
+            }}
+          >
+            {items}
+          </button>
+        );
       })}
     </>
   );
