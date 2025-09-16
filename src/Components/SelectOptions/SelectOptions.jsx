@@ -34,18 +34,15 @@ function SelectOptions() {
         ))}
       </select>
 
-      {selectedList.length > 0 && (
-        <div style={{ marginTop: "20px" }}>
-          <ul>
-            {selectedList.map((item, index) => (
-              <li key={index} style={{ marginBottom: "5px" }}>
-                {item}{" "}
-                <button onClick={() => handleDelete(item)}>Delete</button>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      <div style={{ marginTop: "20px" }}>
+        <ul>
+          {selectedList.map((item, index) => (
+            <li key={index}>
+              {item} <button onClick={() => handleDelete(item)}>Delete</button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
