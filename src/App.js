@@ -5,6 +5,7 @@ import { useState } from "react";
 import NewCart from "./Components/NewCart/NewCart";
 import SelectOptions from "./Components/SelectOptions/SelectOptions";
 import InputProduct from "./Components/InputProduct/InputProduct";
+import GithubUsers from "./Components/GithubUsers/GithubUsers";
 
 function App() {
   // const [SelectCompanyName, SetselectCompanyName] = useState(
@@ -37,6 +38,10 @@ function App() {
         </div>
          <div style={{ marginTop: "30px" }}>
           <InputProduct/>
+          
+         </div>
+         <div style={{ marginTop: "30px" }}>
+          <GithubUsers/>
           
          </div>
       </div>
