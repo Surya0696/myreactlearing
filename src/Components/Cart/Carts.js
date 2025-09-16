@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { data } from "../../DataSet";
 
 const Carts = () => {
+  
   const [products, setproducts] = useState(data);
+
   const handleDeleteAll = () => {
     setproducts([]);
   };
