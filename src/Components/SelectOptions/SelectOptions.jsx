@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 function SelectOptions() {
   const data = [
-    { id: 1, name: "iPhone X" },
-    { id: 2, name: "iPhone 5" },
-    { id: 3, name: "iPhone 6" },
-    { id: 4, name: "iPhone 7" },
-    { id: 5, name: "iPhone 8" },
+    { id: 1, name: 'iPhone X' },
+    { id: 2, name: 'iPhone 5' },
+    { id: 3, name: 'iPhone 6' },
+    { id: 4, name: 'iPhone 7' },
+    { id: 5, name: 'iPhone 8' },
   ];
 
   const [selectedList, setSelectedList] = useState([]);
@@ -18,31 +18,30 @@ function SelectOptions() {
     }
   };
 
-  const handleDelete = (itemToDelete) => {
-    const updatedList = selectedList.filter((item) => item !== itemToDelete);
+  const handleDelete = (value) => {
+    const updatedList = selectedList.filter((x) => x !== value);
     setSelectedList(updatedList);
   };
 
   return (
     <div>
-      <select onChange={handleChange} value="">
-        <option value="">-- Select --</option>
-        {data.map((product) => (
-          <option key={product.id} value={product.name}>
-            {product.name}
+      <select value="" onChange={handleChange}>
+        <option value="">---- Select ----</option>
+        {data.map((dataList) => (
+          <option key={dataList.id} value={dataList.name}>
+            {dataList.name}
           </option>
         ))}
       </select>
 
-      <div style={{ marginTop: "20px" }}>
-        <ul>
-          {selectedList.map((item, index) => (
-            <li key={index}>
-              {item} <button onClick={() => handleDelete(item)}>Delete</button>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <ul>
+        {selectedList.map((item, i) => (
+          <li key={i}>
+            {item}
+            <button onClick={() => handleDelete(item)}>Delete</button>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
