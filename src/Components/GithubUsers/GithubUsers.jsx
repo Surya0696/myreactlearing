@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./GithubUsers.css";
 
 export default function GithubUsers() {
   const [users, setUsers] = useState([]);
