@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./style.css";
 
 export default function InputProduct() {
   const [products, setProducts] = useState([]);
@@ -14,24 +15,31 @@ export default function InputProduct() {
     setName("");
   };
 
+  const handleDelete = (id) => {
+    const productDetel = products.filter((x) => x.id !== id);
+    setProducts(productDetel);
+  };
+
   return (
     <>
-      <input
-        type="text"
-        value={name}
-        placeholder="enter value"
-        onChange={(e) => setName(e.target.value)}
-      />
-      <button onClick={handleAdd}>ADD</button>
       <div>
-        {products.map((product) => (
-          <div key={product.id}>
-            <ul>
-              <li>{product.name}</li>
-            </ul>
-          </div>
-        ))}
+        <input
+          type="text"
+          value={name}
+          placeholder="Enter value"
+          onChange={(e) => setName(e.target.value)}
+        />
+        <button onClick={handleAdd}>Add</button>
       </div>
+
+      {products.map((product) => (
+        <div key={product.id}>
+          <ul>
+            <li>{product.name}</li>
+          </ul>
+          <button onClick={() => handleDelete(product.id)}>Remove</button>
+        </div>
+      ))}
     </>
   );
 }
