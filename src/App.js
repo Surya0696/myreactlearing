@@ -1,22 +1,23 @@
 import { useState } from "react";
-import Company from "./Components/Companys/Company";
-import { CompanyLsit } from "./DataSet";
+// import Company from "./Components/Companys/Company";
+// import { CompanyLsit } from "./DataSet";
 // import Carts from "./Components/Cart/Carts";
 import NewCart from "./Components/NewCart/NewCart";
+import SelectOptions from "./Components/SelectOptions/SelectOptions";
 
 function App() {
-  const [SelectCompanyName, SetselectCompanyName] = useState(
-    "Select Company Name"
-  );
+  // const [SelectCompanyName, SetselectCompanyName] = useState(
+  //   "Select Company Name"
+  // );
 
-  const handleSelected = (CompanyName) => {
-    SetselectCompanyName(CompanyName);
-  };
+  // const handleSelected = (CompanyName) => {
+  //   SetselectCompanyName(CompanyName);
+  // };
 
   return (
     <div className="App">
-      <h2>{SelectCompanyName}</h2>
-      {CompanyLsit.map((companyIteam, i) => {
+      {/* <h2>{SelectCompanyName}</h2> */}
+      {/* {CompanyLsit.map((companyIteam, i) => {
         return (
           <Company
             key={companyIteam.id}
@@ -26,9 +27,14 @@ function App() {
             onSelectedBtn={handleSelected}
           />
         );
-      })}
+      })} */}
       {/* <Carts /> */}
-      <NewCart />
+      <div>
+        <NewCart />
+        <div style={{ marginTop: "30px" }}>
+          <SelectOptions />
+        </div>
+      </div>
     </div>
   );
 }
