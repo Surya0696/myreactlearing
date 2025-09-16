@@ -2,6 +2,7 @@ import { useState } from "react";
 import Company from "./Components/Companys/Company";
 import { CompanyLsit } from "./DataSet";
 import Carts from "./Components/Cart/Carts";
+import NewCart from "./Components/NewCart/NewCart";
 
 function App() {
   const [SelectCompanyName, SetselectCompanyName] = useState(
@@ -26,7 +27,8 @@ function App() {
           />
         );
       })}
-       <Carts />
+      {/* <Carts /> */}
+      <NewCart />
     </div>
   );
 }
