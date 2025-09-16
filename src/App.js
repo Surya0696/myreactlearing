@@ -4,6 +4,7 @@ import { useState } from "react";
 // import Carts from "./Components/Cart/Carts";
 import NewCart from "./Components/NewCart/NewCart";
 import SelectOptions from "./Components/SelectOptions/SelectOptions";
+import InputProduct from "./Components/InputProduct/InputProduct";
 
 function App() {
   // const [SelectCompanyName, SetselectCompanyName] = useState(
@@ -34,6 +35,10 @@ function App() {
         <div style={{ marginTop: "30px" }}>
           <SelectOptions />
         </div>
+         <div style={{ marginTop: "30px" }}>
+          <InputProduct/>
+          
+         </div>
       </div>
     </div>
   );
